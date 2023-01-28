@@ -27,7 +27,7 @@ document.getElementById("start").onclick = function () {
     show("time");
 
     //30 seconds timer
-    timeRemaining = 30;
+    timeRemaining = 600;
     document.getElementById("remainingTime").innerHTML = timeRemaining;
 
     //hide game over box

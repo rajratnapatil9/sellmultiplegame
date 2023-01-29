@@ -21,7 +21,7 @@ html
 #board{
     background-color:#abd7ec;
     width: 500px;
-    height: 380px;
+    height: 720px;
     border-radius:5px;  
     box-shadow: 0px 5px 5px #134b80;
     -moz-box-shadow: 0px 5px 5px #134b80;
@@ -38,6 +38,8 @@ html
     text-align: center;
     color:white;
     border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 43px;
     box-shadow: 0px 5px 5px #133512;
     -moz-box-shadow: 0px 5px 5px #133512;
     -webkit-box-shadow: 0px 5px 5px #133512;
@@ -70,17 +72,20 @@ html
     -webkit-box-shadow: 0px 5px 5px grey;
 }
 #problem{
-    padding:5px;
+    padding:15px;
     background-color:#4d74df;
-    width: 400px;
-    height: 60px;
-    text-align:center;
+    width: 350px;
+    height: 160px;
+    text-align:left;
     position: absolute;
     margin: 85px 40px;
     font-size: 40px;
     line-height: 60px;
     color:white;
     border-radius: 5px;
+    margin-top: 55px;
+    margin-bottom: 43px;
+    margin-left: 50px;
     box-shadow: 0px 5px 5px #153d93;
     -moz-box-shadow: 0px 5px 5px #153d93;
     -webkit-box-shadow: 0px 5px 5px #153d93;
@@ -97,6 +102,8 @@ html
     font-size: 20px;
     color:white;
     border-radius: 5px;
+    margin-top: 255px;
+    margin-bottom: 43px;
     box-shadow: 0px 5px 5px #223927;
     -moz-box-shadow: 0px 5px 5px #223927;
     -webkit-box-shadow: 0px 5px 5px #223927;
@@ -105,17 +112,36 @@ html
     margin: 215px 40px;
     position: absolute;   
 }
-#answer1, #answer2, #answer3, #answer4{
+#answer1, #answer2{
     padding: 5px;
-    height: 50px; 
-    line-height: 50px;
-    width: 60px;
+    height: 150px; 
+    line-height: 30px;
+    width: 150px;
     background-color: aliceblue;
     float:left;
     border-radius: 5px;
-    font-size: 34px;
+    font-size: 14px;
     text-align:center;
-    margin-right: 43px;
+    margin-right: 50px;
+    margin-top: 150px;
+    margin-bottom: 10px;
+    box-shadow: 0px 5px 5px grey;
+    -moz-box-shadow: 0px 5px 5px grey;
+    -webkit-box-shadow: 0px 5px 5px grey;
+}
+#answer3, #answer4{
+    padding: 5px;
+    height: 150px; 
+    line-height: 30px;
+    width: 150px;
+    background-color: aliceblue;
+    float:left;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align:center;
+    margin-right: 50px;
+    margin-top: 2px;
+    margin-bottom: 43px;
     box-shadow: 0px 5px 5px grey;
     -moz-box-shadow: 0px 5px 5px grey;
     -webkit-box-shadow: 0px 5px 5px grey;

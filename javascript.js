@@ -21,7 +21,7 @@ document.getElementById("start").onclick = function () {
 
     //show the instructions
     document.getElementById("instruction").innerHTML =
-      "Click on the right answer";
+      "How Many Packs on Sell Multiple to Pick?";
 
     //show countdown box
     show("time");
@@ -107,13 +107,24 @@ const startCountdown = () => {
 
 //generate question and answers
 const generateQA = () => {
-  //a random digit from 0 to 10 inclusive
-  var randomNumber1 = Math.round(Math.random() * 10);
-  var randomNumber2 = Math.round(Math.random() * 10);
+  var min1 = 5;
+  var max1 = 20;
+  
+  var min2 = 5;
+  var max2 = 10;
 
+  //a random digit from 0 to 10 inclusive
+  var randomNumber1 = Math.floor(Math.random() * (max1 - min1 + 1)) + min1;
+  var randomNumber2 = Math.floor(Math.random() * (max2 - min2 + 1)) + min2;
+  
   document.getElementById("problem").innerHTML =
-    randomNumber1 + " x " + randomNumber2;
-  correctAnswer = randomNumber1 * randomNumber2;
+  //correctAnswer = randomNumber1 / randomNumber2;
+    "Order Quantity: "+ "\t" + randomNumber1 +    "\n"  +    "\nSell Multiple: "  +    "\t"     +     randomNumber2;
+    
+    if ((randomNumber1 % randomNumber2) == 0) {
+      correctAnswer = randomNumber1 / randomNumber2;
+    }
+    else{    correctAnswer= "Sell Multiple Broken.\n" + "Inform Team Lead.\t\t\n" + "\n" + "\n Seek support from Quality"};
   var answerBox = Math.round(Math.random() * 3) + 1;
 
   //to fill on if the random answer boxes with the right answer

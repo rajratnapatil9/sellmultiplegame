@@ -3,6 +3,8 @@ var score;
 var timeRemaining;
 var action;
 var correctAnswer;
+var questionNumber;
+var wrong;
 
 //the user clicks on the start/reset
 document.getElementById("start").onclick = function () {
@@ -13,12 +15,13 @@ document.getElementById("start").onclick = function () {
   }
   //if the user is not playing
   else {
-    //change mode to playing
-    document.getElementById("startgame").pause();
     playing = true;
     score = 0;
     document.getElementById("scoreNumber").innerHTML = score;
-
+    wrong= 0;
+    document.getElementById("wrongNumber").innerHTML = wrong;
+    questionNumber=1;
+    document.getElementById("questionNumber").innerHTML = questionNumber;
     //show the instructions
     document.getElementById("instruction").innerHTML =
       "How Many Packs on Sell Multiple to Pick?";
@@ -50,12 +53,18 @@ for (var i = 1; i < 5; i++) {
     if (playing == true) {
       //if the answer is correct
       //this=document.getElementById("answer1")
+      
+         
       if (this.innerHTML == correctAnswer) {
         //correct answer
         score++;
         document.getElementById("scoreNumber").innerHTML = score;
+        document.getElementById("wrongNumber").innerHTML = wrong;
+        questionNumber++;
+        document.getElementById("questionNumber").innerHTML = questionNumber;
         //play sound
         document.getElementById("win").play();
+        
         show("right");
 
         //show for 1 sec
@@ -65,18 +74,21 @@ for (var i = 1; i < 5; i++) {
         hide("wrong");
         //generate new answer and question
         generateQA();
+        
       } else {
-        //play sound
-        document.getElementById("lost").play();
-
-        //wrong answer
-        show("wrong");
-
+        wrong++;
+        document.getElementById("wrongNumber").innerHTML = wrong;
+        questionNumber++;
+        document.getElementById("questionNumber").innerHTML = questionNumber;
+        
+        show("right")
         //show for 1 sec
         setTimeout(function () {
           hide("wrong");
         }, 1000);
         hide("right");
+        generateQA();
+        startCountdown();
       }
     }
   };
@@ -94,7 +106,7 @@ const startCountdown = () => {
       stopCountdown();
       show("gameover");
       document.getElementById("gameover").innerHTML =
-        "<p>GAME OVER!</p><p>YOUR SCORE: " + score + "</p>";
+        "<p>GAME OVER!</p><p>YOUR SCORE: " + score + "\nWRONG ANSWERS: " + wrong +"</p>";
       document.getElementById("final").play();
       hide("time");
       hide("right");

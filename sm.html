@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <meta charset="utf-8" />
+    <title>Sell Multiple Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/f4f62720cb.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" integrity="sha256-PZLhE6wwMbg4AB3d35ZdBF9HD/dI/y4RazA3iRDurss=" crossorigin="anonymous" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel=stylesheet href="https://s3-us-west-2.amazonaws.com/colors-css/2.2.0/colors.min.css">
+    <!--css-->
+    <link rel="stylesheet" href="./css/sm.css" />
+  </head>
+<!--Navigation bar start-->
+<section class="navbarsection">
+  
+      <header>
+          <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+              <a class="navbar-brand" href="home.html">QUALITY TRAINING</a>
+              <br>
+
+
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ml-auto">
+                      <li class="nav-item">
+                          <a class="nav-link" href="home.html">Home</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="signup-login.html">Signup/Login</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="sm.html">SellMultipleGame</a>
+                      </li>
+                  </ul>
+
+              </div>
+          </nav>
+
+
+      </header>
+
+</section>
+  <body>
+    <div id="container">
+      <!-- title-->
+      <h1 class="gametitle">Sell Multiple Game</h1>
+      <!--game board-->
+      <div id="board">
+        <div id="right">Right</div>
+        <div id="wrong">Wrong</div>
+        <div id="score">Score: <span id="scoreNumber">0</span></div>
+        <div id="wrong_score">Wrong: <span id="wrongNumber">0</span></div>
+        <div id="question_num">Question Number: <span id="questionNumber">0</span></div>
+        <div id="problem"></div>
+        <div id="instruction"></div>
+        <div id="answers">
+          <div id="answer1"></div>
+          <div id="answer2"></div>
+          <div id="answer3"></div>
+          <div id="answer4"></div>
+        </div>
+       
+        <div id="start">Start Game</div>
+        
+        <div id="time">Time: <span id="remainingTime">600</span> sec</div>
+        
+        <div id="gameover">
+          GAME OVER Your score: <span id="finalscore">0</span>
+        </div>
+      </div>
+
+      <!--audio files-->
+      <div class="player">
+        <audio id="startgame" autoplay controls loop>
+          <source src="audio/start.mp3" />
+          <source src="audio/start.ogg" />
+        </audio>
+      </div>
+
+
+    <!--JavaScript-->
+    <script src="./js/sm.js"></script>
+  </body>
+</html>

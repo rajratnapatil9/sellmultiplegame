@@ -45,17 +45,20 @@ document.getElementById("start").onclick = function () {
     //generate new question and answers
     generateQA();
   }
+  
 };
 
 //the user clicks on the answer box
 for (var i = 1; i < 5; i++) {
   document.getElementById("answer" + i).onclick = function () {
+    
     if (playing == true) {
       //if the answer is correct
       //this=document.getElementById("answer1")
       
          
       if (this.innerHTML == correctAnswer) {
+        generateQA();
         //correct answer
         score++;
         document.getElementById("scoreNumber").innerHTML = score;
@@ -73,26 +76,27 @@ for (var i = 1; i < 5; i++) {
         }, 1000);
         hide("wrong");
         //generate new answer and question
-        generateQA();
+        
         
       } else {
+        generateQA();
         wrong++;
         document.getElementById("wrongNumber").innerHTML = wrong;
         questionNumber++;
         document.getElementById("questionNumber").innerHTML = questionNumber;
         
-        show("right")
+        show("wrong")
         //show for 1 sec
         setTimeout(function () {
           hide("wrong");
         }, 1000);
         hide("right");
-        generateQA();
         startCountdown();
       }
+      
     }
-  };
-}
+  }
+};
 
 //functions
 
@@ -104,13 +108,18 @@ const startCountdown = () => {
     if (timeRemaining == 0) {
       //game over
       stopCountdown();
+      hide("time");
+      hide("remainingTime");
+      hide("right");
+      hide("wrong");
       show("gameover");
+     
       document.getElementById("gameover").innerHTML =
         "<p>GAME OVER!</p><p>YOUR SCORE: " + score + "\nWRONG ANSWERS: " + wrong +"</p>";
       document.getElementById("final").play();
-      hide("time");
-      hide("right");
-      hide("wrong");
+      
+     
+      
       playing = false;
       document.getElementById("start").innerHTML = "Start Game";
     }
@@ -166,7 +175,9 @@ const generateQA = () => {
 };
 
 //stop counter
-const stopCountdown = () => clearInterval(action);
+const stopCountdown = () => {
+  clearInterval(action);
+};
 
 //hide an element
 const hide = (id) => (document.getElementById(id).style.display = "none");
